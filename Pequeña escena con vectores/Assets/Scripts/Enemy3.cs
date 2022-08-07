@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWithPosibilities : MonoBehaviour
+public class Enemy3 : MonoBehaviour
 {
     // Propiedades
     enum EnemyMoves { Staring, Chasing }
@@ -18,20 +18,27 @@ public class EnemyWithPosibilities : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        switch (enemyMove)
+        {
+            case EnemyMoves.Chasing:
+                chasing();
+                break;
+            case EnemyMoves.Staring:
+                staring();
+                break;
+        }
         
     }
     void chasing()
     {
         Vector3 direction = (targetPosition.position - transform.position);
-        direction.Normalize();
-        transform.Translate(direction.normalized * speed * Time.deltaTime);
-        if(direction.magnitude < 2f)
+        if (direction.magnitude > 2f)
         {
-            speed = 0;
+            transform.Translate(direction.normalized * speed * Time.deltaTime);
         }
+        transform.LookAt(targetPosition);
     }
     void staring()
     {
-        transform.RotateAround(targetPosition.position, Vector3.up, 20f * Time.deltaTime);
     }
 }
