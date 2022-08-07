@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     // Propiedades
     public float speed = 2f;
+    float cameraxisx = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,11 +33,13 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(Vector3.down);
+            cameraxisx += Input.GetAxis("Horizontal");
+            transform.rotation = Quaternion.Euler(0,cameraxisx,0);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(Vector3.up);
+            cameraxisx -= Input.GetAxis("Horizontal");
+            transform.rotation = Quaternion.Euler(0, -cameraxisx, 0);
         }
     }
 
