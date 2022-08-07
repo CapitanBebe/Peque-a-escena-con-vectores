@@ -26,20 +26,17 @@ public class Player : MonoBehaviour
         {
             MovePlayer(Vector3.forward);
         }
-
         if (Input.GetKey(KeyCode.S))
         {
             MovePlayer(Vector3.back);
         }
-
         if (Input.GetKey(KeyCode.A))
         {
-            MovePlayer(Vector3.left);
+            transform.Rotate(Vector3.down);
         }
-
         if (Input.GetKey(KeyCode.D))
         {
-            MovePlayer(Vector3.right);
+            transform.Rotate(Vector3.up);
         }
     }
 
