@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy3 : MonoBehaviour
+public class EnemyWithPosibilities : MonoBehaviour
 {
     // Propiedades
-    enum EnemyMoves { staringTime, chasingTime }
+    enum EnemyMoves { Staring, Chasing }
     [SerializeField] EnemyMoves enemyMove;
-    [SerializeField] Transform target;
-    public GameObject head;
+    [SerializeField] Transform targetPosition;
     public float speed = 2f;
     // Start is called before the first frame update
     void Start()
@@ -19,32 +18,20 @@ public class Enemy3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch(enemyMove)
-        {
-            case EnemyMoves.staringTime:
-                staring();
-                break;
-            case EnemyMoves.chasingTime:
-                chasing();
-                break;
-        }
+        
     }
     void chasing()
     {
-        Vector3 direction = (target.position - transform.position);
-        if (direction.magnitude > 2f)
+        Vector3 direction = (targetPosition.position - transform.position);
+        direction.Normalize();
+        transform.Translate(direction.normalized * speed * Time.deltaTime);
+        if(direction.magnitude < 2f)
         {
-            transform.position += (direction.normalized * speed * Time.deltaTime);
-            transform.LookAt(target, Vector3.up);
-        }
-        if (direction.magnitude <= 2f)
-        {
-            transform.position -= (direction.normalized * speed * Time.deltaTime);
-            transform.LookAt(target, Vector3.up);
+            speed = 0;
         }
     }
     void staring()
     {
-     head.transform.LookAt(target, Vector3.up);
+        transform.RotateAround(targetPosition.position, Vector3.up, 20f * Time.deltaTime);
     }
 }

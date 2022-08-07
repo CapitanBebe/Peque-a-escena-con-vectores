@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     // Propiedades
     public float speed = 2f;
-    float cameraxisx = 0f;
+    public float rotationSpeed = 500f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,30 +17,18 @@ public class Player : MonoBehaviour
     {
         movement();
     }
-    void MovePlayer(Vector3 direction)
-    {
-        transform.Translate(direction * speed * Time.deltaTime);
-    }
     void movement()
     {
-        if (Input.GetKey(KeyCode.W))
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        Vector3 movementDirection = new Vector3(horizontalInput,0,verticalInput);
+        movementDirection.Normalize();  
+        transform.Translate(movementDirection * speed * Time.deltaTime, Space.World);
+        if(movementDirection != Vector3.zero)
         {
-            MovePlayer(Vector3.forward);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            MovePlayer(Vector3.back);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            cameraxisx += Input.GetAxis("Horizontal");
-            transform.rotation = Quaternion.Euler(0,cameraxisx,0);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            cameraxisx -= Input.GetAxis("Horizontal");
-            transform.rotation = Quaternion.Euler(0, -cameraxisx, 0);
+            Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
     }
-
 }

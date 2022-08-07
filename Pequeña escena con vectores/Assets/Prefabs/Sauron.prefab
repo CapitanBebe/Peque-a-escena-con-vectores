@@ -99,7 +99,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!1 &1449759109171421448
+--- !u!1 &713758115356306337
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,47 +107,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6440513467899397179}
-  - component: {fileID: 5844750295245342375}
-  - component: {fileID: 8007412875338049750}
-  - component: {fileID: 8109565552757593647}
+  - component: {fileID: 1035698460890768295}
+  - component: {fileID: 8086769947461261230}
+  - component: {fileID: 19164662797942940}
+  - component: {fileID: 8726446229135982326}
   m_Layer: 0
-  m_Name: Sauron's sclera
+  m_Name: eye2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6440513467899397179
+--- !u!4 &1035698460890768295
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449759109171421448}
+  m_GameObject: {fileID: 713758115356306337}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.015, y: -0.006, z: 0.394}
-  m_LocalScale: {x: -0.68, y: 0.54, z: 0.2369107}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.024, y: -0.004, z: 0.315}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5566564491469557059}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5844750295245342375
+--- !u!33 &8086769947461261230
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449759109171421448}
+  m_GameObject: {fileID: 713758115356306337}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8007412875338049750
+--- !u!23 &19164662797942940
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449759109171421448}
+  m_GameObject: {fileID: 713758115356306337}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -183,13 +183,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8109565552757593647
+--- !u!135 &8726446229135982326
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449759109171421448}
+  m_GameObject: {fileID: 713758115356306337}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 5262134190292780117}
   - component: {fileID: 398453292999564192}
   m_Layer: 0
-  m_Name: Sauron's pupil
+  m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,7 +223,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3436513194337115560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03476842, y: -0.0037559771, z: 0.408}
+  m_LocalPosition: {x: 0.03476842, y: -0.0037559771, z: 0.456}
   m_LocalScale: {x: 0.2345, y: 0.2345, z: 0.2345}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 9052353370201506575}
   - component: {fileID: 4372499043916977784}
   m_Layer: 0
-  m_Name: Sauron's eye
+  m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,12 +321,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6401735987143720134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.042, y: 1.66, z: 0.013}
+  m_LocalPosition: {x: 0.042, y: 1.373, z: 0.013}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2891855300368247636}
-  - {fileID: 6440513467899397179}
+  - {fileID: 1035698460890768295}
   m_Father: {fileID: 208934794632160094}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
