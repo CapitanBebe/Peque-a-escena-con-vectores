@@ -207,23 +207,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!1 &281600879 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 208934794632160082, guid: d54f403aac7555f4090d57564a6a2d33, type: 3}
-  m_PrefabInstance: {fileID: 208934794869443878}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &281600884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281600879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d86409b4d0bded45971884052717923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,13 +318,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961b9f8c52b79ef449429b68e61283c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  targetPosition: {fileID: 1017556090}
   speed: 5
 --- !u!4 &1017556090 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8729157445304613065, guid: d2ce28516f3341b44a51d3930fb00ef0, type: 3}
   m_PrefabInstance: {fileID: 8729157445606104366}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1209806576 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6401735987143720134, guid: d54f403aac7555f4090d57564a6a2d33, type: 3}
+  m_PrefabInstance: {fileID: 208934794869443878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1209806581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209806576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d86409b4d0bded45971884052717923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1017556090}
+  speed: 3
 --- !u!1 &1429441811 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2206416386385274906, guid: ad09922da5f761c48a81bb35544d7972, type: 3}
@@ -361,7 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMove: 1
   targetPosition: {fileID: 1017556090}
-  speed: 7
+  speed: 5
 --- !u!1 &1604707591
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,11 +471,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 208934794632160082, guid: d54f403aac7555f4090d57564a6a2d33, type: 3}
       propertyPath: m_Name
-      value: Sauron2
+      value: Sauron1
       objectReference: {fileID: 0}
     - target: {fileID: 208934794632160094, guid: d54f403aac7555f4090d57564a6a2d33, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 208934794632160094, guid: d54f403aac7555f4090d57564a6a2d33, type: 3}
       propertyPath: m_LocalScale.x
@@ -607,11 +609,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7050311153451541714, guid: 18d223612ca960c4bb7cee96adc4cb83, type: 3}
       propertyPath: m_Name
-      value: Enemy1
+      value: Enemy2
       objectReference: {fileID: 0}
     - target: {fileID: 7050311153451541726, guid: 18d223612ca960c4bb7cee96adc4cb83, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7050311153451541726, guid: 18d223612ca960c4bb7cee96adc4cb83, type: 3}
       propertyPath: m_LocalPosition.x

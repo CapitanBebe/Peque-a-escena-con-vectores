@@ -5,8 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Propiedades
-    public float speed = 10f;
-    public float rotationSpeed = 200f;
+    float speed = 10f;
+    float rotationSpeed = 200f;
     // Start is called before the first frame update
     void Start()
     {

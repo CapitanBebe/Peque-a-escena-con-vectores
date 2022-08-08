@@ -4,31 +4,32 @@ using UnityEngine;
 
 public class Enemy1 : MonoBehaviour
 {
-    // Propiedades
-    [SerializeField] Transform target;
-    public float speed = 7f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	// Propiedades
+	Quaternion targetRotation;
+	public Transform target;
+	public float speed = 0.1F;
+	bool rotating = false;
+	float rotationTime;
 
-    // Update is called once per frame
-    void Update()
+	void Update()
+	{
+		staring();
+	}
+	void staring()
     {
-        chasing();
-    }
-    void chasing()
-    {
-        Vector3 direction = (target.position - transform.position);
-        if(direction.magnitude > 2f)
-        {
-            transform.Translate(direction.normalized * speed * Time.deltaTime);
-        }
-        if (direction.magnitude < 2f)
-        {
-            transform.Translate(direction.normalized * -speed * Time.deltaTime);
-        }
-        transform.LookAt(target);
-    }
+		Vector3 relativePosition = target.position - transform.position;
+		targetRotation = Quaternion.LookRotation(relativePosition);
+		rotating = true;
+		rotationTime = 0;
+
+		if (rotating)
+		{
+			rotationTime += Time.deltaTime * speed;
+			transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationTime);
+			if (rotationTime > 1)
+			{
+				rotating = false;
+			}
+		}
+	}
 }

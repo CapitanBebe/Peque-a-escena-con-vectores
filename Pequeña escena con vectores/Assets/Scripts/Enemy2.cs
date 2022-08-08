@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class Enemy2 : MonoBehaviour
 {
-    float speed = 0.01f;
-    float timeCount = 0.1f;
-    Transform player;
+    // Propiedades
+    [SerializeField] Transform targetPosition;
+    public float speed = 2f;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
+
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = Quaternion.Lerp( transform.rotation, player.rotation, timeCount * speed);
-        timeCount += Time.deltaTime;
+        chasing();
+    }
+    void chasing()
+    {
+        Vector3 direction = (targetPosition.position - transform.position);
+        if (direction.magnitude > 2f)
+        {
+            transform.Translate(direction.normalized * speed * Time.deltaTime);
+        }
+        transform.LookAt(targetPosition);
     }
 }
